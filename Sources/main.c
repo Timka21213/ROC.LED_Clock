@@ -48,7 +48,7 @@ int main(void)
 	P2SEL &= ~ BIT3;
 
 	// Таймер считающий время
-	TA1CCR0 = 1024;
+	TA1CCR0 = 1024 - 1;			// 32Hz, 32768/32-1
 	TA1CCTL0 = CCIE;
 	TA1CTL = TASSEL_1 + ID_0 + MC_1;
 
